@@ -1,0 +1,109 @@
+---
+title: "R Data Types"
+Date  :
+---
+
+1. Vector
+
+```{r}
+x <- c(1,2,3,4,5,6,7,8,9,10,11,12,34,56,75,32,67,77)
+print(x)
+```
+```{r}
+y <- c("one","Two","Three","Four","Five","Six")
+print(y)
+print(class(y)) # High level
+print(typeof(y)) # Low Level
+
+```
+Indexing (I R index starts from 1 while most other languages starts from 0)
+```{r}
+print(y[2])  #print element at index no 2
+
+```
+In R, negative indexing is used to exclude specific elements from a vector. By specifying negative indices, you tell R to return all elements except those at the specified positions.
+```{r}
+print(y[-2]) # Remove element at index 2
+print(y[c(-3,-4)]) # Remove elemens at index 3 and 4
+```
+Mixed types in a vector
+```{r}
+s <- c('apple','red',5,TRUE)
+typeof(s)
+print(s)
+```
+Creating Vector using sequence seq()
+
+
+```{r}
+seq_var <- seq(5,9, by=1)
+print(seq_var)
+
+yyy <- seq(5,9, by=0.6)
+print(yyy)
+
+```
+Creating a Vector using range
+
+```{r}
+v <- 5:13
+print(v)
+```
+Creating a sequence from 5.6 to 12.6
+```{r}
+rv <- 5.6 : 12.6
+print(rv)
+
+rsv <- seq(5.6,12.6, by=1)
+print(rsv)
+
+```
+```{r}
+
+```
+```{r}
+weekdays <- c("Sun","Mon","Tue","Wed","Thu","Fri","Sat")
+print(weekdays)
+weekdays
+
+#Using Logical indexing to access vector elements
+
+```
+```{r}
+#install.packages("pryr")
+library(pryr)
+x <- 42
+address(x)
+```
+Vector Operatios
+```{r}
+vec1 <- c(4,5,6,7,8)
+vec2 <- c(2,3,4,5,6)
+
+addRes <- vec1 + vec2
+subRes <- vec1 - vec2
+mulRes <- vec1 * vec2
+divRes <- vec1 / vec2
+print(addRes)
+print(subRes)
+print(mulRes)
+print(divRes)
+
+```
+Vector Element Recycling
+```{r}
+v1 <- c(5,1,4,8)
+v2 <- c(3,2)
+add.result <- v1+v2
+
+v11 <- c(2,2,2)
+v22 <- c(1,2,3,4,5,6)
+add.result1 <- v11 - v22
+print(add.result1)
+help(readline())
+```
+Read Element from the keyboard
+```{r}
+name <- readline(prompt = "Enter your name: ")
+cat("Hello,", name, "!\n")
+```
