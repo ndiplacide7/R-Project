@@ -30,3 +30,86 @@ addition <- function(n1, n2) {
 addition(10, 20)
 ```
 
+Write an R script that receives two numbers and returns their sum
+```{r}
+addition4 <- function(n1, n2) {
+    result <- n1 + n2
+    return(result)
+}
+# Taking input from user and cast to integer
+num1 <- as.integer(readline("Enter first number: "))
+num2 <- as.integer(readline("Enter second number: "))
+
+# Calling the function
+addition4(num1, num2)
+
+#ls(all.names = TRUE)
+```
+
+Function Default arguments
+
+```{r}
+addition5 <- function(x = 4, y=6)
+{
+  return (x+y)
+}
+addition5() # result will be 10 as default values are used
+addition5(2,4) # Result will be 6
+```
+Calling a function with keyword arguments
+```{r}
+addition6 <- function(x = 4, y=6)
+{
+  return (x+y)
+}
+addition6(x=2, y=4) # Result will be 6
+```
+Arbitrary arguments
+```{r}
+addition7 <- function(...)
+{
+  result <- sum(...)
+  for(i in list(...))
+    print(i)
+  return (result)  # x and y will be passed as arguments
+}
+addition7(c(1,2,3,4,5))
+```
+
+Second Way
+```{r}
+addition8 <- function(nums) {
+  result <- 0
+  for (i in nums) {
+    result <- result + i
+  }
+  return(result)
+}
+
+addition8(c(2, 4, 6, 8, 10, 12))
+```
+```{r}
+addition8 <- function(...) {  # Function definition needs 'function' keyword
+    nums <- list(...)         # This is correct
+    result <- 0
+    for(i in nums){
+        #print(i)
+        result <- result + i
+    }
+    return(result)
+}
+
+# To call with a vector, you need to use do.call or pass individual numbers
+# Option 1: Pass individual numbers
+addition8(2, 4, 6, 8, 10, 12)
+
+# Option 2: Use do.call with a vector
+numbers <- c(2, 4, 6, 8, 10, 12)
+do.call(addition8, as.list(numbers))
+```
+```{r}
+myvector <- c(2,4,6,8,10,12)
+print(myvector[3])
+mylist <- unlist(as.list(myvector))
+print(length(mylist))
+```

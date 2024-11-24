@@ -1,0 +1,39 @@
+---
+title: "R Special Functions"
+
+---
+1. apply : Apply a function across the rows or columns of a matrix
+2. lapply : Apply a function to each element of a list and return a list
+3. sapply : Apply a function to each element of a list and simplify the result
+4. vapply : Apply a function to each element of a vector and simplify the result
+5. mapply : Apply a function to corresponding elements of two or more vectors in parallel
+5. lambda :
+
+
+1. apply
+```{r}
+mat1 <- matrix(c(2,38,9,12,13,34), nrow = 2, ncol = 3)
+mat1
+apply(mat1, 1, sum) # margin = 1 : row wise
+
+apply(mat1, 2, sum) # margin = 2 : column wise
+
+```
+2. lapply
+```{r}
+lst <- list(c(2,3,4,5,6,7,8,9))
+lapply(lst, sum) # Here sum is a built in function
+lapply(lst, myDefinedFunction) # Here myDefinedFunction is a user defined function
+
+myDefinedFunction <- function(...)
+{
+  result <- sum(...)
+  return (result)
+}
+
+```
+
+3. sapply
+```{r}
+
+```
