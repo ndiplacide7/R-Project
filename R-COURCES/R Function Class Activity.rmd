@@ -1,0 +1,32 @@
+---
+title: "R Function"
+---
+Syntax of a function in R :
+
+function_name(arg1, arg2, arg3, ...){
+    statements
+    return
+}
+
+Function With no parameters
+```{r}
+subtraction <- function() {
+    n1 <- 30
+    n2 <- 20
+    result <- n1 - n2
+    print(result)
+}
+subtraction()
+```
+
+
+```{r}
+addition <- function(n1, n2) {
+    result <- n1 + n2
+    print(result)
+    return(result)
+}
+# Calling the function
+addition(10, 20)
+```
+

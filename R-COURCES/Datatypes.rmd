@@ -65,9 +65,13 @@ print(rsv)
 weekdays <- c("Sun","Mon","Tue","Wed","Thu","Fri","Sat")
 print(weekdays)
 weekdays
-
 #Using Logical indexing to access vector elements
 
+weekdays[c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE)]
+
+# Accessing Vector Elements Using 0/1 Indexing
+
+weekdays[c(2,0,0,1,3,5)]
 ```
 ```{r}
 #install.packages("pryr")

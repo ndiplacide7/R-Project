@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+myList <- list(2,3,"Kumar",3.5,TRUE)
+x <- myList[2]
+y <- myList[[2]]
+print(x)
+print(y)
+
+typeof(x)
+typeof(y)
+
+```
+Merging Two List
+```{r}
+myList1 <- list(10,11,12,13,14)
+myList2 <- list(20,21,22,23,24)
+mergedList <- c(myList1,myList2)
+print(typeof(mergedList))
+length(mergedList)
+```
+
+Appending List
+```{r}
+myList1 <- list(10,11,12,13,14)
+append(myList1,list(100,101,102,103,104))
+```
+
+Converting List to Vector
+```{r}
+print(typeof(myList1))
+unlist(myList1)
+print(typeof(myList1))
+
+```
